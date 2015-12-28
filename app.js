@@ -34,16 +34,18 @@ app.listen(port, function init(err) {
 	console.log('running server on port ' + port);
 });
 
-// activity.start();
+activity.start();
 
-// setTimeout(function(){ 
-// 	activity.stop()
-// }, 15000);
+setTimeout(function(){ 
+	activity.stop()
+}, 2000);
 
-// var activity2 = new Activity();
+var activity2 = new Activity(500, function() {
+	console.log('activity ' + activity2.id + ' custom work method');
+});
 
-// activity2.start();
+activity2.start();
 
-// setTimeout(function(){ 
-// 	activity2.stop()
-// }, 15000);
+setTimeout(function(){ 
+	activity2.stop()
+}, 5000);
